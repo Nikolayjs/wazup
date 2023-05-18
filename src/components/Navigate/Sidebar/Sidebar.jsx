@@ -3,11 +3,11 @@ import Header from '../Header/Header';
 import styles from './Sidebar.module.css';
 import ChatList from '../../ChatList/ChatList';
 
-const Sidebar = () => {
+const Sidebar = ({ numberHandler }) => {
   return (
     <div className={styles.sidebar}>
       <Header />
-      <ChatList />
+      <ChatList numberHandler={numberHandler} />
     </div>
   );
 };
