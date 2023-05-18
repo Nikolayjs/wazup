@@ -1,0 +1,3 @@
+.chatListElement {
+  @apply h-[72px] mt-[15px] relative w-full bg-[#202c33];
+}
