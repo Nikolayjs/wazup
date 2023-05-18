@@ -1,0 +1,10 @@
+.inputContainer {
+  @apply flex space-x-2 items-center px-4 mt-2;
+}
+.inputContent {
+  @apply flex-grow flex items-center space-x-2 bg-[#202c33] py-1 px-4 rounded-md;
+}
+
+.input {
+  @apply focus:outline-none bg-[#202c33] border-none  w-full text-[#aebac1] text-xs focus:ring-0 focus:ring-offset-0;
+}

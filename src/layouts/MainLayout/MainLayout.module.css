@@ -1,3 +1,6 @@
 .container {
-  @apply relative flex min-h-[512px] shadow-cm my-0 mx-auto w-[calc(100%-38px)] h-[calc(100%-38px)] max-w-[1600px] top-[19px];
+  @apply bg-[#111b21] flex items-center justify-center h-screen overflow-y-hidden xl:px-40 py-4;
+}
+.wrapper {
+  @apply flex h-full w-full overflow-y-hidden;
 }

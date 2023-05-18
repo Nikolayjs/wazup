@@ -1,3 +1,10 @@
 .chatListElement {
-  @apply h-[72px] mt-[15px] relative w-full bg-[#202c33];
+  @apply flex items-center space-x-2 px-4 w-full mt-2 hover:bg-[#202c33] cursor-pointer transition mr-2;
+}
+.elementContent {
+  @apply flex justify-between border-b py-4 border-[#272f34];
+}
+
+.elementWrapper {
+  @apply flex flex-col w-80;
 }

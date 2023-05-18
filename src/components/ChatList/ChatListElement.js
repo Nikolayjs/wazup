@@ -4,7 +4,7 @@ import styles from './ChatList.module.css';
 
 const ChatListElement = () => {
   return (
-    <div className="flex items-center space-x-2 px-4 w-full mt-2 hover:bg-[#202c33] cursor-pointer transition mr-2">
+    <div className={styles.chatListElement}>
       <svg viewBox="0 0 212 212" className="flex-none w-12 h-12">
         <path
           fill="#DFE5E7"
@@ -18,9 +18,9 @@ const ChatListElement = () => {
           ></path>
         </g>
       </svg>
-      <div className="flex justify-between border-b py-4 border-[#272f34]">
-        <div className="flex flex-col w-80">
-          <span className="text-white">M Dupond</span>
+      <div className={styles.elementContent}>
+        <div className={styles.elementWrapper}>
+          <span className="text-white">User Name</span>
           <div className="flex text-[#aebac1] space-x-2">
             <svg viewBox="0 0 18 18" width="18" height="18" className="flex-none">
               <path
@@ -28,7 +28,7 @@ const ChatListElement = () => {
                 d="m17.394 5.035-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z"
               ></path>
             </svg>
-            <span className="text-sm truncate">Oui Oui</span>
+            <span className="text-sm truncate">Message Content</span>
           </div>
         </div>
         <Badge />
