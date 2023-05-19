@@ -3,7 +3,6 @@ import Service from '../../api/service';
 import { useFetching } from '../../hooks/useFetching';
 
 const ChatHeader = ({ number, user }) => {
-  console.log(user);
   return (
     <div className="flex justify-between bg-[#202c33] px-4 py-2">
       <div className="flex flex-none space-x-2 items-center">

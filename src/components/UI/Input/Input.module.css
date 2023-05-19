@@ -8,3 +8,15 @@
 .input {
   @apply focus:outline-none bg-[#202c33] border-none  w-full text-[#aebac1] text-xs focus:ring-0 focus:ring-offset-0;
 }
+
+.inputField {
+  @apply flex flex-grow items-center space-x-4;
+}
+
+.mainInput {
+  @apply focus:outline-none border-none bg-[#2a3942] w-full text-[#aebac1] p-3 rounded-lg text-sm focus:ring-0 focus:ring-offset-0;
+}
+
+.mainInputField {
+  @apply flex flex-grow items-center space-x-4;
+}
