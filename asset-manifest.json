@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/wazup/static/css/main.8f18e05f.css",
+    "main.js": "/wazup/static/js/main.32e497ed.js",
+    "index.html": "/wazup/index.html",
+    "main.8f18e05f.css.map": "/wazup/static/css/main.8f18e05f.css.map",
+    "main.32e497ed.js.map": "/wazup/static/js/main.32e497ed.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8f18e05f.css",
+    "static/js/main.32e497ed.js"
+  ]
+}
