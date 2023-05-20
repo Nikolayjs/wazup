@@ -1,9 +1,0 @@
-.container {
-  @apply bg-[#111b21] flex items-center justify-center h-screen overflow-y-hidden xl:px-40 py-4;
-}
-.wrapper {
-  @apply flex h-full w-full overflow-y-hidden;
-}
-.chat {
-  @apply flex flex-col bg-[#0b141a] overflow-hidden flex-grow;
-}
