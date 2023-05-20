@@ -2,7 +2,7 @@
   @apply bg-[#111b21] flex items-center justify-center h-screen overflow-y-hidden xl:px-40 py-4;
 }
 .wrapper {
-  @apply flex h-full w-full overflow-y-hidden;
+  @apply flex flex-col h-full w-full overflow-y-hidden;
 }
 
 .inputContainer {
@@ -13,7 +13,7 @@
 }
 
 .input {
-  @apply focus:outline-none bg-[#202c33] border-none  w-full text-[#aebac1] text-base focus:ring-0 focus:ring-offset-0 appearance-none;
+  @apply focus:outline-none bg-[#202c33] border-none text-[#aebac1] px-10 text-sm focus:ring-0 focus:ring-offset-0 appearance-none;
 }
 .inputWrapper {
   @apply flex flex-col bg-[#0b141a] overflow-hidden flex-grow justify-center items-center rounded-xl;

@@ -6,7 +6,7 @@
 }
 
 .input {
-  @apply focus:outline-none bg-[#202c33] border-none  w-full text-[#aebac1] text-xs focus:ring-0 focus:ring-offset-0;
+  @apply focus:outline-none bg-[#202c33] border-none w-full text-[#aebac1] text-xs focus:ring-0 focus:ring-offset-0;
 }
 
 .inputField {

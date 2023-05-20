@@ -53,6 +53,18 @@ const LoginScreen = ({ authHandler, setData }) => {
           <button onClick={() => submitHandler(id, api)} className={styles.btn}>
             Войти
           </button>
+          <div className="mt-20">
+            <h3>
+              Приложение использует{' '}
+              <a
+                className="text-green-600 cursor-pointer hover:border-b-2 hover:border-green-600"
+                href="https://green-api.com/"
+                target="blank"
+              >
+                Green API
+              </a>
+            </h3>
+          </div>
         </div>
       </div>
       {modal && (
