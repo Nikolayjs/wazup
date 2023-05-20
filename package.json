@@ -1,6 +1,6 @@
 {
-  "homepage": "https://nikolayjs.github.io/wazup/",
   "name": "wazup",
+  "homepage": "https://nikolayjs.github.io/wazup/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

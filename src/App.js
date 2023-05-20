@@ -18,9 +18,6 @@ function App() {
     if (!data) {
       setIsAuth(false);
     }
-    if (isAuth && !auth) {
-      setAuth(localStorage.setItem('auth', isAuth));
-    }
     if (data && auth) {
       setIsAuth(true);
       getData(data);
