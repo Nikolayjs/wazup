@@ -15,3 +15,9 @@
 .input {
   @apply focus:outline-none bg-[#202c33] border-none  w-full text-[#aebac1] text-base focus:ring-0 focus:ring-offset-0 appearance-none;
 }
+.inputWrapper {
+  @apply flex flex-col bg-[#0b141a] overflow-hidden flex-grow justify-center items-center rounded-xl;
+}
+.btn {
+  @apply bg-green-800/40 hover:bg-green-400/40 active:bg-green-800/90 p-2 rounded-md mt-4 min-w-[90px];
+}

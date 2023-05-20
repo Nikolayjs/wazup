@@ -1,8 +1,8 @@
 import React from 'react';
-import { getAuth } from '../api/service';
+import { getAuth, getData } from '../api/service';
 import Modal from '../components/UI/Modal/Modal';
 import styles from './LoginScreen.module.css';
-const LoginScreen = ({ authHandler }) => {
+const LoginScreen = ({ authHandler, setData }) => {
   const [id, setId] = React.useState('');
   const [api, setApi] = React.useState('');
   const [modal, setModal] = React.useState(false);
@@ -12,25 +12,28 @@ const LoginScreen = ({ authHandler }) => {
     const response = await getAuth(id, api);
     if (!response) {
       setModal(true);
+      return;
     }
     if (!authData) {
       setModal(true);
     } else if (response.stateInstance) {
       authHandler(true);
       setAuthData({ id: id, api: api });
-      localStorage.setItem('authData', JSON.stringify({ id: id, api: api }));
+      const authData = localStorage.setItem('authData', JSON.stringify({ id: id, api: api }));
+      setData(authData);
+      getData(authData);
     }
   }
 
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <div className="flex flex-col bg-[#0b141a] overflow-hidden flex-grow justify-center items-center rounded-xl">
+        <div className={styles.inputWrapper}>
           <h1>Войдите, чтобы продолжить</h1>
           <div className={styles.inputContainer}>
             <div className={styles.inputContent}>
               <input
-                type="number"
+                type="text"
                 className={styles.input}
                 placeholder="IdInstance"
                 onChange={(e) => setId(e.target.value)}
@@ -47,10 +50,7 @@ const LoginScreen = ({ authHandler }) => {
               />
             </div>
           </div>
-          <button
-            onClick={() => submitHandler(id, api)}
-            className="bg-green-800/40 hover:bg-green-400/40 active:bg-green-800/90 p-2 rounded-md mt-4 min-w-[90px]"
-          >
+          <button onClick={() => submitHandler(id, api)} className={styles.btn}>
             Войти
           </button>
         </div>

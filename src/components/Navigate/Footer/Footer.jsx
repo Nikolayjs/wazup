@@ -1,5 +1,4 @@
 import React from 'react';
-import Service from '../../../api/service';
 import Input from '../../UI/Input/Input';
 import styles from './Footer.module.css';
 const Footer = ({ sendMessage }) => {

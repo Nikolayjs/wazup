@@ -8,3 +8,12 @@
 .elementWrapper {
   @apply flex flex-col w-80;
 }
+.chatList {
+  @apply flex flex-col space-y-2 flex-grow;
+}
+.chatListContainer {
+  @apply flex flex-col space-y-4 flex-grow;
+}
+.chatListContent {
+  @apply overflow-x-hidden overflow-y-auto flex-grow h-10;
+}

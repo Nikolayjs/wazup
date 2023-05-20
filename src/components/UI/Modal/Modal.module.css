@@ -1,0 +1,17 @@
+.container {
+  @apply h-full;
+}
+
+.modalBg {
+  @apply fixed inset-0 z-10 bg-black/30;
+}
+
+.modalWrapper {
+  @apply fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-0;
+}
+.modalContent {
+  @apply mx-auto w-full overflow-hidden rounded-lg bg-[#111b21] shadow-xl sm:max-w-sm;
+}
+.btn {
+  @apply flex-1 rounded-lg border border-green-700 bg-green-700 px-4 py-2 text-center text-sm font-medium text-white shadow-sm transition-all hover:border-green-600 hover:bg-green-600 focus:ring focus:ring-green-200 disabled:cursor-not-allowed disabled:border-green-300 disabled:bg-green-300;
+}

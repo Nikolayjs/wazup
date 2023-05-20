@@ -4,3 +4,6 @@
 .wrapper {
   @apply flex h-full w-full overflow-y-hidden;
 }
+.chat {
+  @apply flex flex-col bg-[#0b141a] overflow-hidden flex-grow;
+}

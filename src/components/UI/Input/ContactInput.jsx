@@ -1,5 +1,5 @@
 import React from 'react';
-import Service, { getChat } from '../../../api/service';
+import { getChat } from '../../../api/service';
 import { useFetching } from '../../../hooks/useFetching';
 import styles from './Input.module.css';
 const ContactInput = ({ numberHandler }) => {
@@ -10,8 +10,6 @@ const ContactInput = ({ numberHandler }) => {
     if (phone) {
       const response = await getChat(`${phone}`, 100);
       setMessages(response);
-    } else {
-      console.log('Нет сообщений');
     }
   });
 

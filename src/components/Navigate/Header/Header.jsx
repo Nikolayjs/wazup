@@ -1,14 +1,18 @@
 import React from 'react';
 import styles from './Header.module.css';
-const Header = () => {
+const Header = ({ logout }) => {
   return (
-    <div className="flex justify-between bg-[#202c33] px-4 py-2">
+    <div className={styles.header}>
       <img
         src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
         className="rounded-full h-12 w-12"
         alt=""
       />
-      <div className="flex items-center space-x-8">
+
+      <div className={styles.container}>
+        <span className="cursor-pointer" onClick={logout}>
+          Выйти
+        </span>
         <svg viewBox="0 0 24 24" width="24" height="24">
           <path
             fill="#aebac1"

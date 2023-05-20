@@ -3,14 +3,18 @@ import axios from 'axios';
 
 let id;
 let api;
-const getData = () => {
-  const data = localStorage.getItem('authData');
-  console.log(data);
-  id = JSON.parse(data).id;
-  api = JSON.parse(data).api;
+export const getData = () => {
+  const authData = localStorage.getItem('authData');
+  if (authData) {
+    id = JSON.parse(authData).id;
+    api = JSON.parse(authData).api;
+  } else {
+    console.log('Ошибка');
+  }
 };
-getData();
+
 export async function getContacts() {
+  getData();
   try {
     const response = await axiosClassic.get(`/waInstance${id}/getChats/${api}`);
     return response;
@@ -19,6 +23,7 @@ export async function getContacts() {
   }
 }
 export async function getChat(userId, count) {
+  getData();
   try {
     const response = await axiosClassic.post(`/waInstance${id}/getChatHistory/${api}`, {
       chatId: userId,
@@ -31,6 +36,7 @@ export async function getChat(userId, count) {
   }
 }
 export async function getContactInfo(userId) {
+  getData();
   try {
     const response = await axios.post(
       `https://api.green-api.com/waInstance${id}/getContactInfo/${api}`,
@@ -43,6 +49,7 @@ export async function getContactInfo(userId) {
 }
 export async function getAuth(id, api) {
   try {
+    getData();
     const { data } = await axios.get(
       `https://api.green-api.com/waInstance${id}/getStateInstance/${api}`
     );
@@ -52,12 +59,21 @@ export async function getAuth(id, api) {
   }
 }
 export async function sendMessage(chatId, message) {
+  getData();
   try {
     const data = await axiosClassic.post(`/waInstance${id}/sendMessage/${api}`, {
       chatId: `${chatId}@c.us`,
       message: message,
     });
-    console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function updateChat() {
+  getData();
+  try {
   } catch (error) {
     console.log(error);
   }

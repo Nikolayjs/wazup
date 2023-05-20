@@ -4,9 +4,9 @@ import styles from './MainLayout.module.css';
 import Chat from '../../components/Chat/Chat';
 import Footer from '../../components/Navigate/Footer/Footer';
 import { useFetching } from '../../hooks/useFetching';
-import { getChat, getContactInfo } from '../../api/service';
+import { getChat, getContactInfo, sendMessage } from '../../api/service';
 
-const MainLayout = () => {
+const MainLayout = ({ checkAuth }) => {
   const [messages, setMessages] = React.useState([]);
   const [contact, setContact] = React.useState('');
   const [contactNumber, setContactNumber] = React.useState('');
@@ -20,7 +20,7 @@ const MainLayout = () => {
   });
   const [fetchInfo] = useFetching(async () => {
     if (contactNumber) {
-      const response = await getContactInfo(contactNumber);
+      const response = await getContactInfo(contactNumber.trim());
       setContact(response);
     }
   });
@@ -30,23 +30,32 @@ const MainLayout = () => {
     fetchInfo();
   }, [contactNumber, isLoading]);
 
-  const sendMessage = async (message) => {
-    await sendMessage(contactNumber, message);
-    setIsLoading(!isLoading);
+  const sendMessageHandler = async (message) => {
+    const res = await sendMessage(contactNumber, message);
+    if (res.status === 200) {
+      setTimeout(() => {
+        setIsLoading(!isLoading);
+      }, 1000);
+    }
   };
 
+  const logout = () => {
+    localStorage.removeItem('auth');
+    localStorage.removeItem('authData');
+    checkAuth(false);
+  };
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <Sidebar numberHandler={setContactNumber} />
-        <div className="flex flex-col bg-[#0b141a] overflow-hidden flex-grow">
+        <Sidebar numberHandler={setContactNumber} logout={logout} />
+        <div className={styles.chat}>
           <Chat
             messages={messages}
             number={contactNumber}
             user={contact}
             getMessages={[setIsLoading, isLoading]}
           />
-          <Footer contact={contactNumber} user={contact} sendMessage={sendMessage} />
+          <Footer contact={contactNumber} user={contact} sendMessage={sendMessageHandler} />
         </div>
       </div>
     </div>
